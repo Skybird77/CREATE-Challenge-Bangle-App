@@ -12,15 +12,15 @@ let page = 0;
       page = 2;
     }
   }
-
+Cir == g.setColor(0,200,0).fillCircle(87.5,87.5,50);
 drawPage(1);
 Bangle.on('swipe', function(directionLR) {
   if(directionLR==-1){
     drawPage(2);
     Bangle.on('touch', function() {
       if(page == 2){
-        g.clear();
-        Bangle.drawWidgets();
+        return(function(Send));
+        return(function(Sent));
       }
     });
   }
@@ -31,6 +31,7 @@ Bangle.on('swipe', function(directionLR) {
 
 
 // When we click the connect button...
+
   var connection;
   document.getElementById("btnConnect").addEventListener("load", function(p) {
     // disconnect if connected already
@@ -55,13 +56,13 @@ Bangle.on('swipe', function(directionLR) {
         l.forEach(onLine);
       });
       // First, reset the Bangle
-      connection.write("reset();\n", function() {
+      connection.write("reset();\n", function(Send) {
         // Wait for it to reset itself
-        setTimeout(function() {
+        setTimeout(function(Sent) {
           // Now upload our code to it
           connection.write("iphone",
             function() { console.log("Ready..."); });
-        }, 1500);
+        }, 60000);
       });
     });
   });
